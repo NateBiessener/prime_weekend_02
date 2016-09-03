@@ -24,7 +24,6 @@ $(document).ready(function(){
       setInterval(function(){
         if (counter == 0) {
           console.log(counter);
-          counter = 9;
           nextStudent();
         }
         else {
@@ -37,6 +36,7 @@ $(document).ready(function(){
 })//end doc ready
 
 var displayStudent = function(index){
+  counter = 9;
   var newDisp = '<p>' + studentData[index].first_name + ' ' + studentData[index].last_name + '</p><p>' + studentData[index].info + '</p><p class="current" id="' + (index) + '">' + (index + 1) + '/' + studentData.length + '</p>'
   $('#outDiv').fadeOut(400,function(){
     $('#outDiv').html(newDisp);
@@ -45,6 +45,7 @@ var displayStudent = function(index){
 }
 
 var prevStudent = function(){
+  counter = 9;
   var index = Number($('.current').attr('id'));
   if (index === 0) {
     var newDisp = '<p>' + studentData[studentData.length - 1].first_name + ' ' + studentData[studentData.length - 1].last_name + '</p><p>' + studentData[studentData.length - 1].info + '</p><p class="current" id="' + (studentData.length - 1) + '">' + studentData.length + '/' + studentData.length + '</p>';
@@ -63,6 +64,7 @@ var prevStudent = function(){
 };//end lastPerson
 
 var nextStudent = function(){
+  counter = 9;
   var index = Number($('.current').attr('id'));
   if (index === studentData.length - 1) {
     var newDisp = '<p>' + studentData[0].first_name + ' ' + studentData[0].last_name + '</p><p>' + studentData[0].info + '</p><p class="current" id="' + 0 + '">' + 1 + '/' + studentData.length + '</p>'
