@@ -15,6 +15,12 @@ $(document).ready(function(){
       studentData = data.students;
       console.log(studentData);
       $('#outDiv').html('<p>' + studentData[0].first_name + " " + studentData[0].last_name + '</p><p>' + studentData[0].info + '</p><p class="current" id="' + 0 + '">' + 1 + "/" + studentData.length + '</p>');
+      $('#nextBtn').remove();
+      for (var i = 0; i < studentData.length; i++) {
+        var studentButton = '<button onclick="displayStudent(' + i + ')">' + studentData[i].first_name + '</button>'
+        $('#buttons').append(studentButton);
+      }
+      $('#buttons').append('<button id="nextBtn" onclick="nextPerson()">Next</button>')
     }//end success callback
   });//end ajax call
 })//end doc ready
@@ -35,10 +41,13 @@ var nextPerson = function(){
     $('#outDiv').html('<p>' + studentData[0].first_name + " " + studentData[0].last_name + '</p><p>' + studentData[0].info + '</p><p class="current" id="' + 0 + '">' + 1 + "/" + studentData.length + '</p>');
   }//end if
   else {
-    $('#outDiv').html('<p>' + studentData[index + 1].first_name + " " + studentData[index + 1].last_name + '</p><p>' + studentData[index + 1].info + '</p><p class="current" id="' + (index + 1) + '">' + (index+2) + "/" + studentData.length + '</p>');
+    $('#outDiv').html('<p>' + studentData[index + 1].first_name + " " + studentData[index + 1].last_name + '</p><p>' + studentData[index + 1].info + '</p><p class="current" id="' + (index + 1) + '">' + (index + 2) + "/" + studentData.length + '</p>');
   }//end else
 };//end nextPerson
 
+var displayStudent = function(index){
+  $('#outDiv').html('<p>' + studentData[index].first_name + " " + studentData[index].last_name + '</p><p>' + studentData[index].info + '</p><p class="current" id="' + (index) + '">' + (index + 1) + "/" + studentData.length + '</p>');
+}
 // first_name:"Will"
 // info:"aka Mr. 5/4"
 // last_name:"Cruzen"
