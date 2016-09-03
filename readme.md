@@ -11,6 +11,6 @@ ____
 * 0.5 X make the display and buttons work
 * 0.6 X add people buttons
 * 0.7 X add transition animation
-* 0.8 add timer
+* 0.8 X add timer
 * 0.9 reset timer on any button click
 * 1.0 cleanup and push
