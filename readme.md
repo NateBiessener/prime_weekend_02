@@ -1,6 +1,8 @@
 Weekend 2 - Francis
 ===================
 
+Originally had JSON data stored in a global array, then refactored to try to store the data in the buttons. Refactor was successful.
+
 Plan
 ____
 
@@ -13,4 +15,4 @@ ____
 * 0.7 X add transition animation
 * 0.8 X add timer
 * 0.9 X reset timer on any button click
-* 1.0 cleanup and push
+* 1.0 X cleanup and push
